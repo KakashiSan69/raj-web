@@ -1,10 +1,5 @@
 import React from "react";
-import { MapPin, Phone, ShieldCheck, Sparkles, MessageCircle } from "lucide-react";
-
-const WHATSAPP_PHONE = "916388910079";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
-  "🏥 Hello Marketing Safalta Team, I would like to book a 1-on-1 healthcare growth consultation for my practice."
-)}`;
+import { MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
 const FORM_URL = "https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97";
 
@@ -58,23 +53,10 @@ export default function ContactForm() {
               </div>
             </div>
           </div>
-
-          <div className="mt-8 pt-6 border-t border-white/10">
-            <p className="text-sm text-[#90A4AE] mb-3">Prefer immediate chat over filling the form?</p>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl bg-[#25D366] text-white text-sm font-bold hover:bg-[#20bd5a] transition-all shadow-md shadow-[#25D366]/20"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chat Directly on WhatsApp</span>
-            </a>
-          </div>
         </div>
       </div>
 
-      <div className="lg:col-span-7">
+      <div className="lg:col-span-7 scroll-mt-28" id="booking-form">
         <div className="rounded-2xl sm:rounded-3xl bg-white dark:bg-[#141E23] border border-[#E0F2F1] dark:border-[#1E2D33] shadow-[0_10px_35px_rgba(38,50,56,0.05)] overflow-hidden">
           <iframe
             src={FORM_URL}
