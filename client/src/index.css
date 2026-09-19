@@ -872,7 +872,6 @@ html.dark body { background: #090E11; color: #FFFFFF; }
 html.dark .doctor-site { background: #090E11; }
 html.dark .top-strip { background: #06090B; border-bottom: 1px solid #162227; }
 html.dark .doctor-header { background: rgba(9, 14, 17, 0.95); border-bottom-color: #1B292F; }
-html.dark .brand img { background: #FFFFFF; padding: 4px 6px; border-radius: 12px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); }
 html.dark .doctor-header nav { color: #FFFFFF !important; }
 html.dark .doctor-header nav a:not(.doctor-cta) { color: #FFFFFF !important; }
 html.dark .doctor-header nav a:not(.doctor-cta):hover { color: #26A69A !important; }
