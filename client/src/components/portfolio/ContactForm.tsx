@@ -77,10 +77,11 @@ export default function ContactForm() {
       <div className="lg:col-span-7">
         <div className="rounded-2xl sm:rounded-3xl bg-white dark:bg-[#141E23] border border-[#E0F2F1] dark:border-[#1E2D33] shadow-[0_10px_35px_rgba(38,50,56,0.05)] overflow-hidden">
           <iframe
-            src="https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97"
-            name="lovable-form-healthcare-digital-marketing-mtekry97"
-            title="Healthcare Digital Marketing Form"
-            style={{ border: "none", width: "100%", minHeight: "600px", display: "block" }}
+            src="https://app.automatefunnels.in/v3/healthcare-marketing-strategy/consultation"
+            width="100%"
+            height="800px"
+            title="Healthcare Marketing Strategy Consultation"
+            style={{ border: "none", borderRadius: "12px", width: "100%", height: "800px", display: "block" }}
             loading="lazy"
           />
         </div>
