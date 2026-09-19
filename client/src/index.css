@@ -216,7 +216,7 @@ button { font: inherit; }
 .promise-icon-wrap.patients-wrap { background: #E0F2F1; color: #00897B; border: 1px solid #B2DFDB; }
 .promise-icon-wrap.roi-wrap { background: #E0F7F4; color: #00695C; border: 1px solid #B2DFDB; }
 .promise-item strong { display: block; color: #000000; font-family: 'Outfit', sans-serif; font-size: 19px; font-weight: 850; line-height: 1.3; }
-.promise-item p { margin: 8px 0 0; color: #000000; font-size: 15.5px; font-weight: 750; line-height: 1.55; }
+.promise-item p { margin: 8px 0 0; color: #000000; font-size: 15.5px; font-weight: 400; line-height: 1.55; }
 
 @keyframes callRing {
   0%, 100% { transform: rotate(0deg) scale(1); }
@@ -311,7 +311,7 @@ button { font: inherit; }
 .strategy-card { position: relative; border: 1px solid rgba(0, 191, 165, 0.22); border-radius: 16px; background: #1E272C; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3); transition: background .2s ease, transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .strategy-card:hover { transform: translateY(-6px); border-color: #00BFA5; background: #24323A; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 191, 165, 0.25); }
 .strategy-card h3 { margin: 8px 0 8px; color: #00BFA5; font-family: 'Outfit', sans-serif; font-size: 20.5px; font-weight: 800; line-height: 1.25; }
-.strategy-card p { margin: 0; color: #FFFFFF; font-size: 15.5px; font-weight: 700; line-height: 1.6; }
+.strategy-card p { margin: 0; color: #FFFFFF; font-size: 15.5px; font-weight: 400; line-height: 1.6; }
 
 .metrics-section { padding: 0; background: #FFFFFF; border-top: 1px solid #E0F2F1; border-bottom: 1px solid #E0F2F1; }
 .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
@@ -331,7 +331,7 @@ button { font: inherit; }
 .adv-lucide-icon { color: #00897B; flex-shrink: 0; }
 .adv-number { color: #B2DFDB; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.05em; }
 .advantage-card h3 { margin: 0 0 10px; color: #000000; font-family: 'Outfit', sans-serif; font-size: 20.5px; font-weight: 850; }
-.advantage-card p { margin: 0; color: #000000; font-size: 15.5px; font-weight: 750; line-height: 1.6; }
+.advantage-card p { margin: 0; color: #000000; font-size: 15.5px; font-weight: 400; line-height: 1.6; }
 
 
 @keyframes emojiShake {
@@ -770,7 +770,7 @@ button { font: inherit; }
   .scroll-indicator { display: none; }
   .promise-item { min-height: auto; padding: 18px 14px; }
   .promise-item strong { font-size: 17px; font-weight: 850; }
-  .promise-item p { font-size: 15px; font-weight: 750; }
+  .promise-item p { font-size: 15px; font-weight: 400; }
   .results-section, .strategy-section, .advantage-section, .reviews-section { padding: 48px 0; }
   .section-heading { margin-bottom: 24px; }
   .section-heading h2 { font-size: clamp(26px, 7vw, 36px); letter-spacing: -.03em; font-weight: 800; }
@@ -791,7 +791,7 @@ button { font: inherit; }
   .count-card span { font-size: 12px; font-weight: 800; }
   .advantage-card { min-height: auto; padding: 20px 18px; }
   .advantage-card h3 { font-size: 18.5px; font-weight: 850; }
-  .advantage-card p { font-size: 15px; font-weight: 750; }
+  .advantage-card p { font-size: 15px; font-weight: 400; }
   .advantage-icon { margin-bottom: 14px; }
   .review-card { padding: 20px 18px; }
   .review-card p { margin: 12px 0 16px; font-size: 16px; line-height: 1.6; font-weight: 750; }
@@ -810,7 +810,7 @@ button { font: inherit; }
 
 @media (max-width: 380px) {
   .container { width: calc(100% - 20px); }
-  .brand img { width: 114px; }
+  .brand img { max-height: 38px; width: auto; }
   .neon-welcome { display: none; }
   .hero-copy h1 { font-size: 26px; font-weight: 900; }
   .section-heading h2 { font-size: 23px; font-weight: 800; }
@@ -872,6 +872,7 @@ html.dark body { background: #090E11; color: #FFFFFF; }
 html.dark .doctor-site { background: #090E11; }
 html.dark .top-strip { background: #06090B; border-bottom: 1px solid #162227; }
 html.dark .doctor-header { background: rgba(9, 14, 17, 0.95); border-bottom-color: #1B292F; }
+html.dark .brand img { background: #FFFFFF; padding: 4px 6px; border-radius: 12px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); }
 html.dark .doctor-header nav { color: #FFFFFF !important; }
 html.dark .doctor-header nav a:not(.doctor-cta) { color: #FFFFFF !important; }
 html.dark .doctor-header nav a:not(.doctor-cta):hover { color: #26A69A !important; }
@@ -901,7 +902,7 @@ html.dark .hero-info-badge { background: #111A1E; border-color: #1B292F; color: 
 html.dark .promise-section { background: #0C1317; border-color: #1B292F; }
 html.dark .promise-item { border-right-color: #1B292F; }
 html.dark .promise-item strong { color: #00BFA5 !important; }
-html.dark .promise-item p { color: #FFFFFF !important; font-weight: 750; }
+html.dark .promise-item p { color: #FFFFFF !important; font-weight: 400 !important; }
 html.dark .promise-header span { color: #26A69A !important; }
 
 html.dark .results-section { background: #090E11; }
@@ -926,7 +927,7 @@ html.dark .strategy-section { background: #05080A; }
 html.dark .strategy-card { background: #0E161A; border-color: #1B292F; }
 html.dark .strategy-card:hover { background: #141E23; border-color: #26A69A; }
 html.dark .strategy-card-body h3, html.dark .strategy-card h3 { color: #00BFA5 !important; }
-html.dark .strategy-card-body p, html.dark .strategy-card p { color: #FFFFFF !important; font-weight: 750; }
+html.dark .strategy-card-body p, html.dark .strategy-card p { color: #FFFFFF !important; font-weight: 400 !important; }
 
 html.dark .metrics-section { background: #0C1317; border-color: #1B292F; }
 html.dark .count-card { border-right-color: #1B292F; }
@@ -936,7 +937,7 @@ html.dark .count-card span { color: #ECEFF1 !important; }
 html.dark .advantage-section { background: #090E11; }
 html.dark .advantage-card { background: #111A1E; border-color: #1B292F; box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4); }
 html.dark .advantage-card h3 { color: #00BFA5 !important; }
-html.dark .advantage-card p { color: #FFFFFF !important; font-weight: 750; }
+html.dark .advantage-card p { color: #FFFFFF !important; font-weight: 400 !important; }
 html.dark .adv-number { color: #26A69A !important; }
 
 html.dark .reviews-section { background: #0C1317; }
