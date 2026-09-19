@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { MapPin, Phone, ShieldCheck, Sparkles, MessageCircle, Calendar, ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
+import React from "react";
+import { MapPin, Phone, ShieldCheck, Sparkles, MessageCircle } from "lucide-react";
 
 const WHATSAPP_PHONE = "916388910079";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
@@ -7,34 +7,8 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent
 )}`;
 
 const FORM_URL = "https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97";
-const CALENDAR_URL = "https://app.automatefunnels.in/v3/healthcare-marketing-strategy/consultation";
 
 export default function ContactForm() {
-  const [activeStep, setActiveStep] = useState<"form" | "calendar">("form");
-
-  useEffect(() => {
-    const handleMessage = (e: MessageEvent) => {
-      try {
-        const raw = typeof e.data === "string" ? e.data.toLowerCase() : "";
-        const obj = typeof e.data === "object" && e.data !== null ? (e.data as Record<string, any>) : null;
-        if (
-          raw.includes("submit") ||
-          raw.includes("form-complete") ||
-          raw.includes("leadconnector") ||
-          obj?.type === "form-submit" ||
-          obj?.action === "form-submit" ||
-          obj?.event === "form-submit" ||
-          obj?.status === "submitted"
-        ) {
-          setActiveStep("calendar");
-        }
-      } catch {}
-    };
-
-    window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, []);
-
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start max-w-7xl mx-auto">
       <div className="lg:col-span-5 space-y-6">
@@ -102,100 +76,13 @@ export default function ContactForm() {
 
       <div className="lg:col-span-7">
         <div className="rounded-2xl sm:rounded-3xl bg-white dark:bg-[#141E23] border border-[#E0F2F1] dark:border-[#1E2D33] shadow-[0_10px_35px_rgba(38,50,56,0.05)] overflow-hidden">
-          <div className="flex items-center justify-between border-b border-[#E0F2F1] dark:border-[#1E2D33] bg-[#F8FCFB] dark:bg-[#0E161A] p-3 sm:px-5">
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setActiveStep("form")}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  activeStep === "form"
-                    ? "bg-[#00897B] text-white shadow-sm"
-                    : "text-[#546E7A] dark:text-[#90A4AE] hover:text-[#00897B]"
-                }`}
-              >
-                <span>Step 1: Practice Form</span>
-                {activeStep === "calendar" && <CheckCircle2 className="w-3.5 h-3.5 text-[#00897B]" />}
-              </button>
-              <span className="text-[#B0BEC5] text-xs">→</span>
-              <button
-                type="button"
-                onClick={() => setActiveStep("calendar")}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  activeStep === "calendar"
-                    ? "bg-[#00897B] text-white shadow-sm"
-                    : "text-[#546E7A] dark:text-[#90A4AE] hover:text-[#00897B]"
-                }`}
-              >
-                <Calendar className="w-3.5 h-3.5" />
-                <span>Step 2: Calendar Slot</span>
-              </button>
-            </div>
-
-            {activeStep === "form" ? (
-              <button
-                type="button"
-                onClick={() => setActiveStep("calendar")}
-                className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-[#00897B] hover:underline cursor-pointer"
-              >
-                <span>Go to Calendar</span>
-                <ArrowRight className="w-3 h-3" />
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => setActiveStep("form")}
-                className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-[#546E7A] dark:text-[#90A4AE] hover:underline cursor-pointer"
-              >
-                <ArrowLeft className="w-3 h-3" />
-                <span>Edit Form Details</span>
-              </button>
-            )}
-          </div>
-
-          {activeStep === "form" ? (
-            <div className="p-1">
-              <iframe
-                src={FORM_URL}
-                name="lovable-form-healthcare-digital-marketing-mtekry97"
-                title="Healthcare Digital Marketing Form"
-                style={{ border: "none", width: "100%", minHeight: "650px", display: "block" }}
-                loading="lazy"
-              />
-              <div className="p-3.5 bg-[#F8FCFB] dark:bg-[#0E161A] border-t border-[#E0F2F1] dark:border-[#1E2D33] text-center">
-                <button
-                  type="button"
-                  onClick={() => setActiveStep("calendar")}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#00897B] hover:bg-[#00796B] text-white text-xs font-bold shadow-md shadow-[#00897B]/20 transition-all cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4" />
-                  <span>Form Fill Ho Gaya? Pick Calendar Slot</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="p-1">
-              <iframe
-                src={CALENDAR_URL}
-                width="100%"
-                height="800px"
-                title="Healthcare Marketing Strategy Consultation Calendar"
-                style={{ border: "none", borderRadius: "12px", width: "100%", height: "800px", display: "block" }}
-                loading="lazy"
-              />
-              <div className="p-3 bg-[#F8FCFB] dark:bg-[#0E161A] border-t border-[#E0F2F1] dark:border-[#1E2D33] flex items-center justify-between">
-                <button
-                  type="button"
-                  onClick={() => setActiveStep("form")}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#546E7A] dark:text-[#90A4AE] hover:text-[#00897B] cursor-pointer"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Back to Form Details</span>
-                </button>
-                <span className="text-[11px] text-[#78909C]">Choose your preferred consultation time above</span>
-              </div>
-            </div>
-          )}
+          <iframe
+            src={FORM_URL}
+            name="lovable-form-healthcare-digital-marketing-mtekry97"
+            title="Healthcare Digital Marketing Form"
+            style={{ border: "none", width: "100%", minHeight: "650px", display: "block" }}
+            loading="lazy"
+          />
         </div>
       </div>
     </div>

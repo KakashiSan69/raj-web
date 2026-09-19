@@ -35,7 +35,7 @@ import AnimatedBackground from "@/components/portfolio/AnimatedBackground";
 import ThemeToggle from "@/components/ThemeToggle";
 import ContactForm from "@/components/portfolio/ContactForm";
 
-const BOOKING_URL = "https://app.automatefunnels.in/v3/healthcare-marketing-strategy/consultation";
+const BOOKING_URL = "https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97";
 const sourceImage = (url: string) => url;
 
 const proofImages = [
