@@ -721,7 +721,7 @@ export default function Home() {
             <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
             
             <div className="mobile-nav-theme-row md:hidden flex items-center justify-between pt-3 mt-1 border-t border-[#E0F2F1] dark:border-[#1E2D33] px-2">
-              <span className="text-xs font-bold text-[#546E7A] dark:text-[#90A4AE]">Theme Mode:</span>
+              <span className="text-sm font-bold text-[#546E7A] dark:text-[#90A4AE]">Theme Mode:</span>
               <ThemeToggle />
             </div>
             <div className="pt-2 md:hidden">
@@ -802,7 +802,7 @@ export default function Home() {
                   (tag) => (
                     <span
                       key={tag}
-                      className="px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-[#E0F2F1] dark:bg-[#12242B] text-[#00897B] dark:text-[#26A69A] border border-[#B2DFDB] dark:border-[#1E3A3A] shadow-xs"
+                      className="px-4 py-2 rounded-full text-sm font-extrabold bg-[#E0F2F1] dark:bg-[#12242B] text-[#00897B] dark:text-[#26A69A] border border-[#B2DFDB] dark:border-[#1E3A3A] shadow-xs"
                     >
                       {tag}
                     </span>
@@ -981,30 +981,30 @@ export default function Home() {
             />
 
             
-            <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8 sm:mb-10">
               <button
                 onClick={() => setActiveTab("all")}
-                className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 ${activeTab === "all"
+                className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-bold transition-all duration-200 ${activeTab === "all"
                     ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
-                    : "bg-[#F5FBFA] text-[#546E7A] hover:bg-[#E0F2F1]"
+                    : "bg-[#F5FBFA] dark:bg-[#141E23] text-[#546E7A] dark:text-[#90A4AE] hover:bg-[#E0F2F1]"
                   }`}
               >
                 All Proof ({proofImages.length + seoImages.length})
               </button>
               <button
                 onClick={() => setActiveTab("gads")}
-                className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 ${activeTab === "gads"
+                className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-bold transition-all duration-200 ${activeTab === "gads"
                     ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
-                    : "bg-[#F5FBFA] text-[#546E7A] hover:bg-[#E0F2F1]"
+                    : "bg-[#F5FBFA] dark:bg-[#141E23] text-[#546E7A] dark:text-[#90A4AE] hover:bg-[#E0F2F1]"
                   }`}
               >
                 Google Ads Proof ({proofImages.length})
               </button>
               <button
                 onClick={() => setActiveTab("seo")}
-                className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-200 ${activeTab === "seo"
+                className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-bold transition-all duration-200 ${activeTab === "seo"
                     ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
-                    : "bg-[#F5FBFA] text-[#546E7A] hover:bg-[#E0F2F1]"
+                    : "bg-[#F5FBFA] dark:bg-[#141E23] text-[#546E7A] dark:text-[#90A4AE] hover:bg-[#E0F2F1]"
                   }`}
               >
                 GMB Local SEO ({seoImages.length})
@@ -1342,11 +1342,11 @@ export default function Home() {
               </span>
             </div>
             <p>Performance marketing for healthcare clinics, doctors & hospitals across India.</p>
-            <p className="mt-1 text-xs text-[#80CBC4]">
+            <p className="mt-1 text-sm text-[#80CBC4]">
               Direct WhatsApp: <a href="#contact" className="underline hover:text-white">Connect with Strategy Desk</a>
             </p>
           </div>
-          <span className="text-xs text-[#90A4AE]">© {new Date().getFullYear()} Marketing Safalta. All rights reserved.</span>
+          <span className="text-sm text-[#90A4AE]">© {new Date().getFullYear()} Marketing Safalta. All rights reserved.</span>
         </div>
       </footer>
 
