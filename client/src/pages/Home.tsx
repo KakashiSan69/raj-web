@@ -1161,9 +1161,112 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+        {/* =========================================================
+            SPECIALISTS SECTION (Matched to Image 1, below feedback)
+            ========================================================= */}
+        <section className="specialists-section" id="specialists">
+          <div className="container">
+            <div className="specialists-grid">
+              {/* Left Column: Founder & Pitch */}
+              <Reveal className="specialists-left">
+                <h2>Healthcare specialists.</h2>
+                <p>
+                  We specialize exclusively in Google Ads for the healthcare industry. Every campaign is built from a deep
+                  understanding of patient demand, customer search behaviour and appointment psychology.
+                </p>
+
+                <div className="founder-showcase">
+                  <div className="founder-image-wrapper">
+                    <div className="founder-glow"></div>
+                    <img
+                      className="founder-img"
+                      src="/raj-thakur.png"
+                      alt="Raj Thakur, CEO Marketing Safalta"
+                      width="440"
+                      height="480"
+                      loading="lazy"
+                    />
+
+                    {/* Floating Founder Badge */}
+                    <div className="founder-badge">
+                      <span className="badge-pulse"></span>
+                      <div className="founder-badge-info">
+                        <small>• MEET THE FOUNDER</small>
+                        <strong>Raj Thakur</strong>
+                        <em>CEO, Marketing Safalta</em>
+                      </div>
+                      <span className="badge-sparkle">✨</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="specialists-cta-wrap">
+                  <CTA>Book a Free Strategy Call</CTA>
+                </div>
+              </Reveal>
+
+              {/* Right Column: 4 Numbered Feature Cards (01, 02, 03, 04) */}
+              <div className="specialist-cards">
+                {/* Card 01 */}
+                <Reveal className="spec-card" delay={60}>
+                  <div className="spec-card-top">
+                    <span className="spec-card-num">01</span>
+                    <div className="spec-card-icon">
+                      <PhoneCall size={22} />
+                    </div>
+                  </div>
+                  <h3>Leads That Actually Convert</h3>
+                  <p>
+                    We don't send random traffic. We bring patients who are actively searching for doctors, clinics &amp; treatments near them.
+                  </p>
+                </Reveal>
+
+                {/* Card 02 */}
+                <Reveal className="spec-card" delay={120}>
+                  <div className="spec-card-top">
+                    <span className="spec-card-num">02</span>
+                    <div className="spec-card-icon">
+                      <BarChart3 size={22} />
+                    </div>
+                  </div>
+                  <h3>Data-Driven Optimization</h3>
+                  <p>
+                    We monitor, optimize, and improve your ads regularly to reduce cost per lead and maximize your ROI.
+                  </p>
+                </Reveal>
+
+                {/* Card 03 */}
+                <Reveal className="spec-card" delay={180}>
+                  <div className="spec-card-top">
+                    <span className="spec-card-num">03</span>
+                    <div className="spec-card-icon">
+                      <Sparkles size={22} />
+                    </div>
+                  </div>
+                  <h3>Healthcare Industry Expertise</h3>
+                  <p>
+                    We understand the healthcare industry inside out: patient search behavior, treatment seasonality, appointment psychology, and high-converting ad copies.
+                  </p>
+                </Reveal>
+
+                {/* Card 04 */}
+                <Reveal className="spec-card" delay={240}>
+                  <div className="spec-card-top">
+                    <span className="spec-card-num">04</span>
+                    <div className="spec-card-icon">
+                      <Users size={22} />
+                    </div>
+                  </div>
+                  <h3>One-to-One Strategy Meeting</h3>
+                  <p>
+                    Every client gets a personal one-to-one meeting to understand their business and build a customized ad strategy. No templates. No copy-paste.
+                  </p>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="strategy-section" id="strategy">
           <div className="container strategy-grid">
             <Reveal className="strategy-intro">
