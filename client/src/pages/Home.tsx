@@ -1299,8 +1299,8 @@ export default function Home() {
 
         <section className="metrics-section">
           <div className="container metrics-grid">
-            <CountCard target={200} suffix="+" label="Clients Served" icon={Users} />
-            <CountCard target={35} suffix="+" label="Active Clients" icon={Gauge} delay={70} />
+            <CountCard target={500} suffix="+" label="Clients Served" icon={Users} />
+            <CountCard target={45} suffix="+" label="Active Clients" icon={Gauge} delay={70} />
             <CountCard target={8} suffix="K+" label="Leads Generated" icon={TrendingUp} delay={140} />
             <CountCard target={95} suffix="%" label="Healthcare Focus" icon={HeartPulse} delay={210} />
           </div>
