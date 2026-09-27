@@ -95,7 +95,7 @@ const specialties = [
 
 const advantages = [
   [
-    "200+ Clients Trust Us",
+    "500+ Clients Trust Us",
     "We have successfully worked with 200+ doctors, clinics & hospitals across India, generating consistent bookings.",
     Users,
     "🤝",
@@ -103,7 +103,7 @@ const advantages = [
   ],
   [
     "35+ Active Clients",
-    "Right now, 35+ healthcare clients actively run campaigns with us. Proof that our results retain clients long-term.",
+    "Right now, 45+ healthcare clients actively run campaigns with us. Proof that our results retain clients long-term.",
     CircleCheck,
     "⚡",
     "anim-adv-bolt",
@@ -1164,7 +1164,7 @@ export default function Home() {
               <Reveal className="specialists-left">
                 <h2>Healthcare specialists.</h2>
                 <p>
-                  We specialize exclusively in performance marketing expert for the healthcare industry. Every campaign is built from a deep
+                  We specialize exclusively in performance marketing for the healthcare industry. Every campaign is built from a deep
                   understanding of patient demand, customer search behaviour and appointment psychology.
                 </p>
 
