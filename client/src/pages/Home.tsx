@@ -96,13 +96,13 @@ const specialties = [
 const advantages = [
   [
     "500+ Clients Trust Us",
-    "We have successfully worked with 200+ doctors, clinics & hospitals across India, generating consistent bookings.",
+    "We have successfully worked with 2500+ doctors, clinics & hospitals across India, generating consistent bookings.",
     Users,
     "🤝",
     "anim-adv-shake",
   ],
   [
-    "35+ Active Clients",
+    "45+ Active Clients",
     "Right now, 45+ healthcare clients actively run campaigns with us. Proof that our results retain clients long-term.",
     CircleCheck,
     "⚡",
