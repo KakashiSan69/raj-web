@@ -829,20 +829,13 @@ export default function Home() {
             <Reveal className="hero-visual" delay={120}>
               <div className="doctor-photo-frame">
                 <div className="photo-grid" />
-                <video
+                <iframe
                   className="hero-video"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster={sourceImage("https://marketingsafalta.com/wp-content/uploads/2026/09/Hulp3iSjQls-HD.jpg")}
-                  aria-label="Healthcare marketing video"
-                >
-                  <source
-                    src="https://marketingsafalta.com/wp-content/uploads/2026/09/vidssave.com-%F0%9F%94%A5Digital-Marketing-for-Doctors-Clinics-Hospitals-_-Daily-Patients-Lane-Ka-Proven-Formula-360P.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+                  src="https://player.cloudinary.com/embed/?cloud_name=tw2tn6of&public_id=doctor_good_ads_video-compressed"
+                  title="Doctor Good Ads Marketing Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
 
                 <div className="floating-result result-one">
                   <span className="result-icon">
