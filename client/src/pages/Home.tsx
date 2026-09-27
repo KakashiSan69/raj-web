@@ -381,7 +381,7 @@ function ScreenshotLightbox({
   const total = images.length;
   const isDraggingRef = useRef(false);
 
-  
+
   const currentIndex = ((page % total) + total) % total;
   const currentImage = images[currentIndex] || images[0];
 
@@ -406,7 +406,7 @@ function ScreenshotLightbox({
     };
   }, [onClose, paginate]);
 
-  
+
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
 
@@ -433,10 +433,10 @@ function ScreenshotLightbox({
 
     if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
       if (diffX > 0) {
-        
+
         paginate(-1);
       } else {
-        
+
         paginate(1);
       }
     }
@@ -466,7 +466,7 @@ function ScreenshotLightbox({
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      
+
       <div className="lightbox-toolbar" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center gap-2.5">
           {currentImage.category && (
@@ -490,9 +490,9 @@ function ScreenshotLightbox({
         </button>
       </div>
 
-      
+
       <div className="lightbox-content-wrap" onClick={(e) => e.stopPropagation()}>
-        
+
         <div className="lightbox-img-stage">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.img
@@ -540,7 +540,7 @@ function ScreenshotLightbox({
         </div>
       </div>
 
-      
+
       <div className="lightbox-bottom-bar" onClick={(e) => e.stopPropagation()}>
         {total > 1 && (
           <div className="lightbox-dots">
@@ -596,7 +596,7 @@ export default function Home() {
     }, delay);
   };
 
-  
+
   useEffect(() => {
     const el = marqueeRef.current;
     if (!el) return;
@@ -644,7 +644,7 @@ export default function Home() {
     }
   };
 
-  
+
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -684,10 +684,10 @@ export default function Home() {
 
   return (
     <div className="doctor-site relative">
-      
+
       <AnimatedBackground />
 
-      
+
       <div className="top-strip">
         <div className="container top-strip-inner">
           <span className="top-strip-spacer" />
@@ -697,7 +697,7 @@ export default function Home() {
         </div>
       </div>
 
-      
+
       <header className="doctor-header">
         <div className="container header-inner">
           <a className="brand" href="#home" onClick={() => setMobileMenuOpen(false)}>
@@ -707,7 +707,7 @@ export default function Home() {
             />
           </a>
 
-          
+
           <div className="neon-welcome" aria-label="Welcome to Marketing Safalta">
             <span>WELCOME TO</span>
             <strong>MARKETING SAFALTA</strong>
@@ -719,7 +719,7 @@ export default function Home() {
             <a href="#advantage" onClick={() => setMobileMenuOpen(false)}>Why Us</a>
             <a href="#reviews" onClick={() => setMobileMenuOpen(false)}>Reviews</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
-            
+
             <div className="mobile-nav-theme-row md:hidden flex items-center justify-between pt-3 mt-1 border-t border-[#E0F2F1] dark:border-[#1E2D33] px-2">
               <span className="text-sm font-extrabold text-black dark:text-[#ECEFF1]">Theme Mode:</span>
               <ThemeToggle />
@@ -762,11 +762,11 @@ export default function Home() {
         </div>
       </header>
 
-      
+
       <main className="relative z-10">
-        
-        
-        
+
+
+
         <section className="hero-section" id="home">
           <div className="container hero-layout">
             <Reveal className="hero-copy">
@@ -779,10 +779,10 @@ export default function Home() {
               </div>
 
               <h1>
-                Get <span>100+ Patient Appointments</span> in Just 30 Days!
+                Get <span>199+ Patient Appointments</span> in Just 30 Days!
               </h1>
 
-              
+
               <div className="h-8 flex items-center gap-2 text-base sm:text-lg font-extrabold text-black dark:text-white my-2">
                 <span className="text-black dark:text-gray-300 font-extrabold">Customized for:</span>
                 <span className="text-[#00897B] font-extrabold border-b-2 border-[#00897B] pb-0.5">
@@ -796,7 +796,7 @@ export default function Home() {
                 visibility, better enquiries, and a steady appointment flow.
               </p>
 
-              
+
               <div className="flex flex-wrap gap-2 pt-1 pb-2">
                 {["Google Ads", "GMB Local SEO", "Patient Funnels", "OPD Footfall", "Meta Ads", "Pan-India"].map(
                   (tag) => (
@@ -825,7 +825,7 @@ export default function Home() {
               </div>
             </Reveal>
 
-            
+
             <Reveal className="hero-visual" delay={120}>
               <div className="doctor-photo-frame">
                 <div className="photo-grid" />
@@ -849,7 +849,7 @@ export default function Home() {
                     <CalendarCheck2 size={15} />
                   </span>
                   <div>
-                    <strong>+100</strong>
+                    <strong>+199</strong>
                     <small>Appointments</small>
                   </div>
                 </div>
@@ -867,9 +867,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="promise-section">
           <div className="container promise-grid">
             <Reveal className="promise-item">
@@ -920,13 +920,13 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="partner-section">
           <div className="container">
             <div className="partner-grid">
-              
+
               <Reveal className="partner-card">
                 <div className="partner-card-top">
                   <div className="partner-logo-box anim-partner-meta">
@@ -944,7 +944,7 @@ export default function Home() {
                 </div>
               </Reveal>
 
-              
+
               <Reveal className="partner-card" delay={100}>
                 <div className="partner-card-top">
                   <div className="partner-logo-box anim-partner-google">
@@ -965,9 +965,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="results-section" id="results">
           <div className="container">
             <SectionHeading
@@ -980,13 +980,13 @@ export default function Home() {
               text="We don't just generate traffic. We generate conversations that move patients closer to your clinic."
             />
 
-            
+
             <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8 sm:mb-10">
               <button
                 onClick={() => setActiveTab("all")}
                 className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-extrabold transition-all duration-200 ${activeTab === "all"
-                    ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
-                    : "bg-[#F5FBFA] dark:bg-[#141E23] text-black dark:text-[#ECEFF1] hover:bg-[#E0F2F1]"
+                  ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
+                  : "bg-[#F5FBFA] dark:bg-[#141E23] text-black dark:text-[#ECEFF1] hover:bg-[#E0F2F1]"
                   }`}
               >
                 All Proof ({proofImages.length + seoImages.length})
@@ -994,8 +994,8 @@ export default function Home() {
               <button
                 onClick={() => setActiveTab("gads")}
                 className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-extrabold transition-all duration-200 ${activeTab === "gads"
-                    ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
-                    : "bg-[#F5FBFA] dark:bg-[#141E23] text-black dark:text-[#ECEFF1] hover:bg-[#E0F2F1]"
+                  ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
+                  : "bg-[#F5FBFA] dark:bg-[#141E23] text-black dark:text-[#ECEFF1] hover:bg-[#E0F2F1]"
                   }`}
               >
                 Google Ads Proof ({proofImages.length})
@@ -1003,15 +1003,15 @@ export default function Home() {
               <button
                 onClick={() => setActiveTab("seo")}
                 className={`px-6 py-2.5 rounded-full text-sm sm:text-base font-extrabold transition-all duration-200 ${activeTab === "seo"
-                    ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
-                    : "bg-[#F5FBFA] dark:bg-[#141E23] text-black dark:text-[#ECEFF1] hover:bg-[#E0F2F1]"
+                  ? "bg-[#00897B] text-white shadow-md shadow-[#00897B]/25"
+                  : "bg-[#F5FBFA] dark:bg-[#141E23] text-black dark:text-[#ECEFF1] hover:bg-[#E0F2F1]"
                   }`}
               >
                 GMB Local SEO ({seoImages.length})
               </button>
             </div>
 
-            
+
             {(activeTab === "all" || activeTab === "gads") && (
               <div className="proof-grid mb-12">
                 {proofImages.map((src, i) => (
@@ -1047,7 +1047,7 @@ export default function Home() {
               </div>
             )}
 
-            
+
             {(activeTab === "all" || activeTab === "seo") && (
               <>
                 <div className="results-divider">
@@ -1098,9 +1098,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="feedback-section">
           <div className="container">
             <SectionHeading
@@ -1301,9 +1301,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="metrics-section">
           <div className="container metrics-grid">
             <CountCard target={200} suffix="+" label="Clients Served" icon={Users} />
@@ -1313,9 +1313,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="advantage-section" id="advantage">
           <div className="container">
             <SectionHeading
@@ -1350,9 +1350,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="reviews-section" id="reviews">
           <div className="container">
             <SectionHeading
@@ -1384,9 +1384,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="py-8 sm:py-20 bg-white dark:bg-[#0B1114]" id="contact">
           <div className="container">
             <SectionHeading
@@ -1402,9 +1402,9 @@ export default function Home() {
           </div>
         </section>
 
-        
-        
-        
+
+
+
         <section className="closing-section">
           <div className="closing-lines" />
           <div className="container closing-inner">
@@ -1422,7 +1422,7 @@ export default function Home() {
         </section>
       </main>
 
-      
+
       {lightboxGallery && (
         <ScreenshotLightbox
           gallery={lightboxGallery}
@@ -1430,7 +1430,7 @@ export default function Home() {
         />
       )}
 
-      
+
       <footer className="doctor-footer">
         <div className="container footer-inner">
           <div>
@@ -1453,7 +1453,7 @@ export default function Home() {
         </div>
       </footer>
 
-      
+
       <a
         className="floating-call"
         href="#booking-form"
