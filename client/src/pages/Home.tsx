@@ -1164,7 +1164,7 @@ export default function Home() {
               <Reveal className="specialists-left">
                 <h2>Healthcare specialists.</h2>
                 <p>
-                  We specialize exclusively in Google Ads for the healthcare industry. Every campaign is built from a deep
+                  We specialize exclusively in performance marketing expert for the healthcare industry. Every campaign is built from a deep
                   understanding of patient demand, customer search behaviour and appointment psychology.
                 </p>
 
