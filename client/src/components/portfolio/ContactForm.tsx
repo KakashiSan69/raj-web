@@ -1,7 +1,7 @@
 import React from "react";
 import { MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
-const FORM_URL = "https://app.automatefunnels.in/form/ms-travel-marketing-lead-form-msefuhao";
+const FORM_URL = "https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97";
 
 export default function ContactForm() {
   return (
@@ -60,7 +60,7 @@ export default function ContactForm() {
         <div className="rounded-2xl sm:rounded-3xl bg-white dark:bg-[#141E23] border border-[#E0F2F1] dark:border-[#1E2D33] shadow-[0_10px_35px_rgba(38,50,56,0.05)] overflow-hidden">
           <iframe
             src={FORM_URL}
-            name="lovable-form-ms-travel-marketing-lead-form-msefuhao"
+            name="lovable-form-healthcare-digital-marketing-mtekry97"
             title="Healthcare Digital Marketing Form"
             style={{ border: "none", width: "100%", minHeight: "650px", display: "block" }}
             loading="lazy"
