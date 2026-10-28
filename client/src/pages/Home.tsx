@@ -33,9 +33,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import AnimatedBackground from "@/components/portfolio/AnimatedBackground";
 import ThemeToggle from "@/components/ThemeToggle";
-import ContactForm from "@/components/portfolio/ContactForm";
 
-const BOOKING_URL = "https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97";
+const BOOKING_URL = "https://calendar.marketingsafalta.com/v3/healthcare-marketing-strategy/consultation";
 const sourceImage = (url: string) => url;
 
 const proofImages = [
@@ -1380,25 +1379,7 @@ export default function Home() {
 
 
 
-        <section className="py-8 sm:py-20 bg-white dark:bg-[#0B1114]" id="contact">
-          <div className="container">
-            <SectionHeading
-              eyebrow="Direct Consultation Request"
-              title={
-                <>
-                  Ready to <span>Grow Your Practice?</span>
-                </>
-              }
-              text="Fill out this quick form to schedule your dedicated 1-on-1 healthcare growth consultation."
-            />
-            <ContactForm />
-          </div>
-        </section>
-
-
-
-
-        <section className="closing-section">
+        <section className="closing-section" id="contact">
           <div className="closing-lines" />
           <div className="container closing-inner">
             <Reveal>
@@ -1449,14 +1430,9 @@ export default function Home() {
 
       <a
         className="floating-call"
-        href="#booking-form"
-        onClick={(e) => {
-          const el = document.getElementById("booking-form");
-          if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }}
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noreferrer"
       >
         <CalendarCheck2 size={19} /> Book a Free Consultation
       </a>

@@ -1,7 +1,7 @@
 import React from "react";
 import { MapPin, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
-const FORM_URL = "https://app.automatefunnels.in/form/healthcare-digital-marketing-mtekry97";
+const FORM_URL = "https://calendar.marketingsafalta.com/v3/healthcare-marketing-strategy/consultation";
 
 export default function ContactForm() {
   return (
