@@ -571,6 +571,15 @@ export default function Home() {
   } | null>(null);
   const [activeTab, setActiveTab] = useState<"all" | "gads" | "seo">("all");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowStickyBar(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const marqueeRef = useRef<HTMLDivElement>(null);
   const isInteractingRef = useRef(false);
@@ -715,6 +724,16 @@ export default function Home() {
           <nav className={mobileMenuOpen ? "is-open" : ""}>
             <a href="#results" onClick={() => setMobileMenuOpen(false)}>Results</a>
             <a href="#strategy" onClick={() => setMobileMenuOpen(false)}>Our Strategy</a>
+            <a
+              href="#youtube"
+              onClick={() => setMobileMenuOpen(false)}
+              className="youtube-nav-link flex items-center gap-1.5"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="#FF0000" className="inline-block shrink-0">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>YouTube</span>
+            </a>
             <a href="#advantage" onClick={() => setMobileMenuOpen(false)}>Why Us</a>
             <a href="#reviews" onClick={() => setMobileMenuOpen(false)}>Reviews</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a>
@@ -859,8 +878,44 @@ export default function Home() {
           </div>
         </section>
 
+        {/* =========================================================
+            YOUTUBE CHANNEL SHOWCASE SECTION (Pure Display - No Redirect)
+            ========================================================= */}
+        <section className="youtube-section" id="youtube">
+          <div className="container youtube-container">
+            <Reveal className="youtube-header-wrap">
+              <div className="youtube-title-header inline-flex items-center justify-center gap-2.5 mb-3">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="34"
+                  height="34"
+                  fill="#FF0000"
+                  className="shrink-0 drop-shadow-[0_0_12px_rgba(255,0,0,0.65)]"
+                >
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                <h2 className="youtube-section-title font-extrabold m-0 tracking-tight text-white dark:text-white">
+                  YouTube Channel
+                </h2>
+              </div>
+            </Reveal>
 
-
+            <Reveal className="youtube-card-reveal" delay={80}>
+              <div className="youtube-card-wrapper max-w-[820px] mx-auto">
+                <div className="youtube-card-frame pointer-events-none select-none">
+                  <img
+                    src="/youtube-channel.png"
+                    alt="Marketing Safalta by Raj Thakur - YouTube Channel"
+                    width="768"
+                    height="783"
+                    loading="lazy"
+                    className="youtube-channel-img"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
 
         <section className="promise-section">
           <div className="container promise-grid">
@@ -1429,13 +1484,32 @@ export default function Home() {
 
 
       <a
-        className="floating-call"
+        className={`floating-call ${showStickyBar ? "is-hidden" : ""}`}
         href={BOOKING_URL}
         target="_blank"
         rel="noreferrer"
       >
         <CalendarCheck2 size={19} /> Book a Free Consultation
       </a>
+
+      {/* Sticky Bottom Bar on Scroll */}
+      <div className={`sticky-bar ${showStickyBar ? "visible" : ""}`} id="sticky-bar">
+        <div className="sticky-bar-inner">
+          <div className="sticky-bar-text">
+            <span>Ready to grow your business???</span>
+            <strong>Connect with us now</strong>
+          </div>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="sticky-btn group"
+          >
+            <span>Book A Free Strategy Call</span>
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
