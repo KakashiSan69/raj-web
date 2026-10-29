@@ -829,7 +829,6 @@ export default function Home() {
               </div>
 
               <div className="hero-actions">
-                <CTA />
                 <a className="watch-link" href="#results">
                   <span className="play-circle">
                     <MousePointer2 size={14} />
