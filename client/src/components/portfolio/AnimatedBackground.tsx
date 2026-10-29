@@ -10,31 +10,36 @@ export default function AnimatedBackground() {
   ];
 
   useEffect(() => {
-    let currentScroll = 0;
-    let requestId: number;
+    let requestId: number | null = null;
 
-    const handleScroll = () => {
-      const newScroll = window.pageYOffset;
-      currentScroll = newScroll;
-
+    const updateBlobs = () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
       blobRefs.current.forEach((blob, index) => {
         if (!blob) return;
         const initialPos = initialPositions[index] || { x: 0, y: 0 };
-        const xOffset = Math.sin(newScroll / 140 + index * 0.7) * 160;
-        const yOffset = Math.cos(newScroll / 140 + index * 0.7) * 35;
+        const xOffset = Math.sin(scrollY / 140 + index * 0.7) * 160;
+        const yOffset = Math.cos(scrollY / 140 + index * 0.7) * 35;
         const x = initialPos.x + xOffset;
         const y = initialPos.y + yOffset;
-        blob.style.transform = `translate(${x}px, ${y}px)`;
+        blob.style.transform = `translate3d(${x}px, ${y}px, 0)`;
         blob.style.transition = "transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)";
       });
-
-      requestId = requestAnimationFrame(handleScroll);
+      requestId = null;
     };
+
+    const handleScroll = () => {
+      if (requestId === null) {
+        requestId = requestAnimationFrame(updateBlobs);
+      }
+    };
+
+    // Initial position update
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(requestId);
+      if (requestId !== null) cancelAnimationFrame(requestId);
     };
   }, []);
 

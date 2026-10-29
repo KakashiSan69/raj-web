@@ -336,7 +336,7 @@ function StrategyCard({
       >
         <div className="strategy-card-shine" />
         <div className="strategy-image-wrap">
-          <img src={image} alt={`${title} healthcare marketing`} />
+          <img src={image} alt={`${title} healthcare marketing`} loading="lazy" decoding="async" />
           <div className="strategy-image-tint" />
           <span className="strategy-image-label">
             <span className="pulse" /> {title}
@@ -574,9 +574,17 @@ export default function Home() {
   const [showStickyBar, setShowStickyBar] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setShowStickyBar(window.scrollY > 300);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowStickyBar(window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -712,6 +720,9 @@ export default function Home() {
             <img
               src="/mslogo.png"
               alt="Marketing Safalta Healthcare Performance Marketing"
+              width="216"
+              height="54"
+              loading="eager"
             />
           </a>
 
@@ -850,6 +861,7 @@ export default function Home() {
                   className="hero-video"
                   src="https://player.cloudinary.com/embed/?cloud_name=tw2tn6of&public_id=doctor_good_ads_video-compressed"
                   title="Doctor Good Ads Marketing Video"
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
@@ -908,6 +920,7 @@ export default function Home() {
                     width="768"
                     height="783"
                     loading="lazy"
+                    decoding="async"
                     className="youtube-channel-img"
                   />
                 </div>
@@ -980,6 +993,8 @@ export default function Home() {
                       src="/meta-partner.png"
                       alt="Meta Certified Partner"
                       className="partner-logo-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <h3>Meta Certified Partner</h3>
@@ -998,6 +1013,8 @@ export default function Home() {
                       src="/google-partner.png"
                       alt="Certified Google Partner"
                       className="partner-logo-img google-logo-img"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <h3>Certified Google Partner</h3>
@@ -1083,7 +1100,7 @@ export default function Home() {
                       aria-label={`View Google Ads campaign result ${i + 1} full screen`}
                     >
                       <div className="proof-index">0{i + 1}</div>
-                      <img src={sourceImage(src)} alt="Google Ads campaign results" />
+                      <img src={sourceImage(src)} alt="Google Ads campaign results" loading="lazy" decoding="async" />
                       <div className="proof-caption">
                         <BarChart3 size={15} /> Tap to view full screenshot
                       </div>
@@ -1131,7 +1148,7 @@ export default function Home() {
                         }}
                         aria-label={`View GMB SEO result ${i + 1} full screen`}
                       >
-                        <img src={sourceImage(src)} alt="GMB SEO result" />
+                        <img src={sourceImage(src)} alt="GMB SEO result" loading="lazy" decoding="async" />
                         <span>
                           <MapPin size={14} /> Tap to view full screenshot
                         </span>
@@ -1195,7 +1212,7 @@ export default function Home() {
                     aria-label={`View client feedback screenshot ${(i % feedbackImages.length) + 1
                       } full screen`}
                   >
-                    <img src={sourceImage(src)} alt="Client feedback" />
+                    <img src={sourceImage(src)} alt="Client feedback" loading="lazy" decoding="async" />
                     <span className="feedback-view-label">View full</span>
                   </button>
                 ))}
@@ -1224,14 +1241,18 @@ export default function Home() {
                 <div className="founder-showcase">
                   <div className="founder-image-wrapper">
                     <div className="founder-glow"></div>
-                    <img
-                      className="founder-img"
-                      src="/raj-thakur.png"
-                      alt="Raj Thakur, CEO Marketing Safalta"
-                      width="440"
-                      height="480"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source srcSet="/raj-thakur.webp" type="image/webp" />
+                      <img
+                        className="founder-img"
+                        src="/raj-thakur.png"
+                        alt="Raj Thakur, CEO Marketing Safalta"
+                        width="440"
+                        height="480"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
 
                     {/* Floating Founder Badge */}
                     <div className="founder-badge">
@@ -1415,7 +1436,7 @@ export default function Home() {
                   <div className="review-stars">★★★★★</div>
                   <p>“{quote}”</p>
                   <div className="review-person">
-                    <img src={photo} alt={name} />
+                    <img src={photo} alt={name} loading="lazy" decoding="async" />
                     <div>
                       <strong>{name}</strong>
                       <small>{org}</small>
@@ -1467,6 +1488,8 @@ export default function Home() {
                 src="/mslogo.png"
                 alt="Marketing Safalta"
                 className="w-10 h-10 object-contain rounded-xl p-1 bg-white footer-logo-img"
+                loading="lazy"
+                decoding="async"
               />
               <span className="text-xl font-extrabold text-white tracking-tight flex items-center gap-1">
                 Marketing <span className="text-[#26A69A]">Safalta</span>
